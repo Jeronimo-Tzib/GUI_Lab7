@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: #0a0a0f;
+    background-image:
+      linear-gradient(rgba(0, 255, 200, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 200, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    color: #c8ffe8;
+  }
+  
+  #app {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .event-form {
+    background-color: #0d1f1a;
+    border: 1px solid #00ffaa33;
+    border-radius: 4px;
+    padding: 2rem;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    outline: 1px solid #00ffaa11;
+    outline-offset: 4px;
+  }
+  
+  .event-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #00ffaa99;
+  }
+  
+  .event-form input[type="date"],
+  .event-form input[type="number"] {
+    background-color: #060f0c;
+    border: 1px solid #00ffaa44;
+    border-radius: 2px;
+    color: #00ffcc;
+    padding: 10px 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .event-form input[type="date"]:focus,
+  .event-form input[type="number"]:focus {
+    border-color: #00ffaa;
+  }
+  
+  .event-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(1) saturate(3) hue-rotate(100deg);
+    cursor: pointer;
+  }
+  
+  .event-form .terms {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    text-transform: none;
+    letter-spacing: 0.05em;
+    color: #00ffaa88;
+    cursor: pointer;
+  }
+  
+  .event-form input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #00ffaa44;
+    background-color: #060f0c;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+  .event-form input[type="checkbox"]:checked {
+    background-color: #00ffaa22;
+    border-color: #00ffaa;
+  }
+  
+  .event-form input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid #00ffaa;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+  
+  .error {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: #ff4466;
+    border-left: 2px solid #ff4466;
+    padding-left: 10px;
+  }
+  
+  .success {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: #00ffaa;
+    border-left: 2px solid #00ffaa;
+    padding-left: 10px;
+  }
+  
+  .submit-btn {
+    background-color: transparent;
+    border: 1px solid #00ffaa;
+    color: #00ffaa;
+    padding: 12px;
+    border-radius: 2px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    margin-top: 0.5rem;
+  }
+  
+  .submit-btn:hover {
+    background-color: #00ffaa;
+    color: #060f0c;
+  }
+  
+  .theme-selector {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .theme-selector select {
+    background-color: #060f0c;
+    border: 1px solid #00ffaa44;
+    color: #00ffaa88;
+    padding: 4px 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .theme-selector input[type="file"] {
+    font-size: 11px;
+    color: #00ffaa66;
+    cursor: pointer;
+  }
+  
+  body.dark {
+    background-color: #050508;
+    color: #a0ffd8;
+  }
+  
+  body.light {
+    background-color: #e8fff5;
+    color: #004433;
+  }
+  
+  body.light .event-form {
+    background-color: #f0fff8;
+    border-color: #00aa6644;
+  }
+  
+  body.light .event-form input[type="date"],
+  body.light .event-form input[type="number"] {
+    background-color: #ffffff;
+    border-color: #00aa6644;
+    color: #004433;
+  }
+  
+  body.light .submit-btn {
+    border-color: #007755;
+    color: #007755;
+  }
+  
+  body.light .submit-btn:hover {
+    background-color: #007755;
+    color: #ffffff;
+  }
